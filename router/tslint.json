@@ -86,6 +86,7 @@
       true,
       "call-signature"
     ],
+    "no-trailing-whitespace": false,
     "typedef-whitespace": {
       "options": [
         {
