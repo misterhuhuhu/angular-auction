@@ -7,14 +7,11 @@ import {Code404Component} from './code404/code404.component';
 const routes: Routes = [
     // path=路径 component=组件
     {
-        path: '', redirectTo: 'home', pathMatch: 'full'
-    },
-    {
-        path: 'home', component: HomeComponent
+        path: '', component: HomeComponent
     },
     {
         // 路由带参数 方法二:
-        path: 'product/:id ', component: ProductComponent
+        path: 'product/:id', component: ProductComponent
     },
     {
         // 访问的路由不存在时,将展示 Code404Component
