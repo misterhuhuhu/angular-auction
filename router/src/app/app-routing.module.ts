@@ -8,6 +8,7 @@ import {SellerInfoComponent} from './seller-info/seller-info.component';
 import {ChatComponent} from './chat/chat.component';
 import {LoginGuard} from './guard/login.guard';
 import {UnsavedGuard} from './guard/unsaved.guard';
+import {ProductResolveGuard} from './guard/product.guard';
 
 const routes: Routes = [
     // path=路径 component=组件
@@ -40,8 +41,11 @@ const routes: Routes = [
         * canDeactivate:处理从当前路由离开的情况。
         * Resolve:在路由激活之前获取路由数据。
         * */
-        canActivate: [LoginGuard],
-        canDeactivate: [UnsavedGuard]
+       /* canActivate: [LoginGuard],
+        canDeactivate: [UnsavedGuard]*/
+        resolve: {
+            product: ProductResolveGuard
+        }
     },
     {
         // 访问的路由不存在时,将展示 Code404Component
@@ -54,7 +58,8 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
     // 再次声明LoginGuard
-    providers: [LoginGuard,UnsavedGuard]
+    // providers: [LoginGuard,UnsavedGuard]
+    providers: [ProductResolveGuard]
 })
 export class AppRoutingModule {
 }

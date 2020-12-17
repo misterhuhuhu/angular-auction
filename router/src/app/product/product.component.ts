@@ -10,6 +10,8 @@ export class ProductComponent implements OnInit {
 
     productId: number;
 
+    productName: string;
+
     constructor(private routerInfo: ActivatedRoute) {
     }
 
@@ -21,6 +23,15 @@ export class ProductComponent implements OnInit {
         // this.productId = this.routerInfo.snapshot.params.id;
         // 订阅机制 subscribe
         this.routerInfo.params.subscribe((value => this.productId = value.id));
+        this.routerInfo.data.subscribe((value: { product: Product }) => {
+            this.productId = value.product.id;
+            this.productName = value.product.name;
+        });
     }
 
+}
+
+export class Product {
+    constructor(public id: number, public name: string) {
+    }
 }
