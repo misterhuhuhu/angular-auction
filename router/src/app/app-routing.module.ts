@@ -5,11 +5,16 @@ import {ProductComponent} from './product/product.component';
 import {Code404Component} from './code404/code404.component';
 import {ProductDescComponent} from './product-desc/product-desc.component';
 import {SellerInfoComponent} from './seller-info/seller-info.component';
+import {ChatComponent} from './chat/chat.component';
 
 const routes: Routes = [
     // path=路径 component=组件
     {
         path: '', redirectTo: 'home', pathMatch: 'full'
+    },
+    {
+        // 显示在 <router-outlet name="aux"></router-outlet> 上
+        path: 'char', component: ChatComponent, outlet: 'aux'
     },
     {
         path: 'home', component: HomeComponent

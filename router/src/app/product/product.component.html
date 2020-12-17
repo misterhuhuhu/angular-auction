@@ -1,6 +1,8 @@
-<p>商品组件激活</p>
-<p>商品id是{{productId}}</p>
-<!--./ 代表此路径下的路由 /代表根路由-->
-<a [routerLink]="['./']">商品描述</a>
-<a [routerLink]="['./seller',99]">销售员信息</a>
-<router-outlet></router-outlet>
+<div class="product-class">
+    <p>商品组件激活</p>
+    <p>商品id是{{productId}}</p>
+    <!--./ 代表此路径下的路由 /代表根路由-->
+    <a [routerLink]="['./']">商品描述</a>
+    <a [routerLink]="['./seller',99]">销售员信息</a>
+    <router-outlet></router-outlet>
+</div>

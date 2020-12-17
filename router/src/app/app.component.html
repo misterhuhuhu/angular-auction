@@ -1,4 +1,5 @@
-<a [routerLink]="['/']">主页</a>
+<!--使用<a [routerLink]="['/']"> 时 辅助路由失效</a>-->
+<a [routerLink]="['/home']">主页</a>
 <br>
 <!-- 路由带参数 方法一:带有一个id=1的参数 http://localhost:4200/product?id=1-->
 <!--<a [routerLink]="['/product']" [queryParams]="{id:1}">商品详情</a>-->
@@ -8,4 +9,16 @@
 <br>
 <input type="button" value="商品详情" (click)="toProduct()">
 <br>
+<!-- <a [routerLink]="[{outlets:{primary: 'home',aux: 'char'}}]">开始聊天</a> 设置 {primary: 'home',aux: 'char'}
+ 主路由同时跳转到 home 上
+ -->
+<a [routerLink]="[{outlets:{primary: 'home',aux: 'char'}}]">开始聊天</a>
+<a [routerLink]="[{outlets:{aux: null}}]">结束聊天</a>
 <router-outlet></router-outlet>
+
+<!--辅助路由案例整体思路
+1、在app组件的模板上再定义一个插座来显示聊天面板
+2、单独开发一个聊天室组件,只显示在新定义的插座上
+3、通过路由参数控制新插座是否显示聊天面板
+-->
+<router-outlet name="aux"></router-outlet>
