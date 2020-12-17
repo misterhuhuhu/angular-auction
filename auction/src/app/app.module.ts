@@ -38,5 +38,4 @@ const routes: Routes = [
     providers: [],
     bootstrap: [AppComponent]
 })
-// @ts-ignore
-export class AppModule { }
+class AppModule { }
