@@ -1,5 +1,5 @@
-<div *ngFor="let p of product" class="col-md-4 col-sm-6 col-lg-3">
-    <div class="thumbnail" [routerLink]="['/product',p.title]">
+<div *ngFor="let p of products" class="col-md-4 col-sm-6 col-lg-3">
+    <div class="thumbnail" [routerLink]="['/product',p.id]">
         <img [src]="imageUrl" alt="">
         <div class="caption">
             <h4 class="pull-right">{{p.price}}</h4>

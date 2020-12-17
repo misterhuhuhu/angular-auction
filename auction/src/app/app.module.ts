@@ -11,10 +11,12 @@ import {AppComponent} from './app.component';
 import {ProductComponent} from './product/product.component';
 import {HomeComponent} from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
+import {ProductService} from './shared/product.service';
 
 const routes: Routes = [
     {path: '', component: HomeComponent},
-    {path: 'product/:productTitle', component: ProductDetailComponent},
+    // {path: 'product/:productTitle', component: ProductDetailComponent},
+    {path: 'product/:productId', component: ProductDetailComponent},
 
 ];
 
@@ -35,7 +37,7 @@ const routes: Routes = [
         FormsModule,
         RouterModule.forRoot(routes),
     ],
-    providers: [],
+    providers: [ProductService],
     bootstrap: [AppComponent]
 })
-class AppModule { }
+export class AppModule { }
