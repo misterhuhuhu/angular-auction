@@ -13,8 +13,8 @@ import {HomeComponent} from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
-    {path = '', component: HomeComponent},
-    {path = 'product/:productTitle', component: ProductDetailComponent},
+    {path: '', component: HomeComponent},
+    {path: 'product/:productTitle', component: ProductDetailComponent},
 
 ];
 
