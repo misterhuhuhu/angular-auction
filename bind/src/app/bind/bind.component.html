@@ -1,0 +1,12 @@
+<p>bind works!</p>
+<!--/*事件绑定*/-->
+<button (click)="onClick($event)">点我</button>
+<hr/>
+<!--dom属性绑定-->
+<img [src]="imgUrl">
+<hr/>
+<!--dom插值绑定-->
+<img src={{imgUrl}}>
+<hr/>
+<!--html和dom属性值不是一个东西-->
+<input value="Tom" (input)="doOnInput($event)"/>
