@@ -12,7 +12,10 @@ export class AppComponent {
     constructor(private router: Router) {
     }
     toProduct(): void {
-        // 与 <a [routerLink]="['/product']">商品详情</a>一样
-        this.router.navigate(['/product']);
+        // 路径与 <a [routerLink]="['/product']">商品详情</a>一样
+        // this.router.navigate(['/product']);
+
+        // 路由带参数
+        this.router.navigate(['/product', 2]);
     }
 }

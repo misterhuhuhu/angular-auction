@@ -10,7 +10,8 @@ const routes: Routes = [
         path: '', component: HomeComponent
     },
     {
-        path: 'product', component: ProductComponent
+        // 路由带参数 方法二:
+        path: 'product/:id', component: ProductComponent
     },
     {
         // 访问的路由不存在时,将展示 Code404Component

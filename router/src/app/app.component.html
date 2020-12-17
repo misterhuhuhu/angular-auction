@@ -1,6 +1,10 @@
 <a [routerLink]="['/']">主页</a>
 <br>
-<a [routerLink]="['/product']">商品详情</a>
+<!-- 路由带参数 方法一:带有一个id=1的参数 http://localhost:4200/product?id=1-->
+<!--<a [routerLink]="['/product']" [queryParams]="{id:1}">商品详情</a>-->
+
+<!--路由带参数 方法二: http://localhost:4200/product/1-->
+<a [routerLink]="['/product',1]">商品详情</a>
 <br>
 <input type="button" value="商品详情" (click)="toProduct()">
 <br>
