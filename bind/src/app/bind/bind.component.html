@@ -10,3 +10,31 @@
 <hr/>
 <!--html和dom属性值不是一个东西-->
 <input value="Tom" (input)="doOnInput($event)"/>
+<hr/>
+<table>
+  <!-- dom没有colspan属性 -->
+  <!--  <tr><td colspan="{{1+1}}"></td></tr> -->
+  <tr>
+    <td [attr.colspan]="size"> dom没有colspan属性</td>
+  </tr>
+</table>
+<hr/>
+<!--class属性绑定-->
+<div class="a b c">未使用class属性绑定</div>
+<div [class]="usedClass">使用class属性绑定</div>
+<div class="a b" [class.c]="isBig">条件绑定</div>
+<div [ngClass]="divClass">[ngClass]绑定</div>
+<div [style.color]="isBig?'red':'yellow'">[style]绑定</div>
+<div [ngStyle]="divStyle">[ngStyle]绑定</div>
+<hr/>
+<!--双向绑定-->
+<input [value]="name" (input)="doOnInput2($event)"/>
+{{name}}
+<hr/>
+<p>流式编程</p>
+<!--流式编程-->
+<!--#value 模板本地变量-->
+<input #myField (keyup)="onKeyUp(myField.value)">
+<!--<input (keyup)="onKeyUp($event)">-->
+<br/>
+<input [formControl]="searchInput">
