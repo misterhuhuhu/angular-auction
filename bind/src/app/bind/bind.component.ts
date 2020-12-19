@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-bind',
